@@ -1,7 +1,17 @@
+# This is the Python version of the program to find the longest
+# palindrome in a very long string
+
 def is_palyndrome(aStr):
+    '''
+    This function verifies if a string is a palindrome
+    '''
     return aStr == aStr[::-1]
 	
 def find_longest_palyndrome(aLongStr):
+    '''
+    This function scans and finds the longest palindrome in a string
+    It returns the found palindrome or an empty string if not found
+    '''
     result = ""
     ln = len(aLongStr)
     for n in range (ln, 0, -1):

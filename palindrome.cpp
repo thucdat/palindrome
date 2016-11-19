@@ -1,19 +1,24 @@
+// This is the C++ version of the program to find the longest
+// palindrome in a very long string
 #include <iostream>
 #include <algorithm>
 
 using namespace std;
 
+// This function verifies if a string is a palindrome
 bool is_palindrome(string aStr)
 {
-    string bStr(aStr);                  // (1)
+    string bStr(aStr);
     reverse(bStr.begin(), bStr.end());
-    return aStr == bStr;                // (2)
+    return aStr == bStr;
 }
 
+// This function scans a string to find the longest palindrome
+// It returns the found string or an empty string if not found
 string find_longest_palindrome(string aLongStr)
 {
-    string result("");                      // (3)
-    int ln = aLongStr.length();             // (4)
+    string result(""); 
+    int ln = aLongStr.length();
     for (int n = ln; n > 0; n--)
     {
         string aStr;
@@ -37,7 +42,3 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-// (1) Since reverse() changes a string in place, a copy is made.
-// (2) This is how to prove if a string is a palindrome
-// (3) Create a local string
-// (4) Take the length of the input string
